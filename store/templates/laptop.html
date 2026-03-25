@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StoreLaptop</title>
+    {% load static %}
+<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<div class="top-menu">
+		<header>
+			<h1>
+			SHOPTOP
+			</h1>
+		</header>
+    <div class="nav">
+        <ul>
+			<li>
+                <button class="btn btn-gray">Sign Up</button>
+            </li>
+            
+            <li>
+                <a href="#">خانه</a>
+            </li>
+            <li>
+                <a href="#">برند</a>
+            </li>
+            <li>
+                <a href="#">About Us</a>
+            </li>
+        </ul>
+    </div>
+</div>
+	<div class="main">
+    <div class="services">
+        <div class="container">
+            <div class="services-header">
+                <h2>پرفروش ترین ها</h2>
+            </div>
+            <div class="services-content">
+                <div class="box">
+                   	<img src="../static/images/asus-rog-g513qr-hf118-15.6-r7-5800h-16gb-1tb-ssd-rtx-3070-gaming-laptop%20(1).jpg">
+                    <h4>Asus ROG G513QR-HF118 15.6</h4>
+                    <p> R7-5800H/16GB/1TB SSD/RTX 3070 Gaming Laptop                   
+                    </p>
+					<h2>80,200,000 Euro</h2>
+                </div>
+                <div class="box">
+                    <img src="../static/images/asus-tuf-f15-tuf507zc4-hn040-15.6-i7-12700h-16gb-512gb-ssd-rtx-3050-gaming-laptop.jpg">
+                    <h4>Asus TUF F15 TUF507ZC4-HN040 15.6</h4>
+                    <p>i7-12700H/16GB/512GB SSD/RTX 3050 Gaming Laptop                      
+                    </p>
+					<h2>80,200,000 Euro</h2>
+                </div>
+                <div class="box">
+                    <img src="../static/images/asus-aorus-15x-asf-83es654sh-15.6-i7-13700hx-16gb-1tb-ssd-rtx-4070-gaming-laptop.jpg">
+                    <h4>Asus AORUS 15X ASF-83ES654SH 15.6</h4>
+                    <p>i7-13700HX/16GB/1TB SSD/RTX 4070 Gaming Laptop                    
+                    </p>
+					<h2>80,200,000 Euro</h2>
+                </div>
+				<div class="box">
+                    <img src="../static/images/hp-victus-15-fa0010ns-15.6-i5-12500h-16gb-512gb-ssd-rtx-3050-gaming-laptop.jpg">
+                    <h4>HP VICTUS 15-FA0010NS 15.6</h4>
+                    <p>i5-12500H/16GB/512GB SSD/RTX 3050 Gaming Laptop
+					<h2>80,200,000 Euro</h2>
+                </div>
+				<div class="box">
+                    <img src="../static/images/msi-gf63-gf63-447xes-15.6-i5-11400h-16gb-512gb-ssd-geforce-rtx-3050-max-q-4gb-gaming-laptop.jpg">
+                    <h4>MSI GF63 GF63-447XES 15.6</h4>
+                    <p>i5-11400H/16GB/512GB SSD/GeForce RTX 3050 Max-Q 4GB Gaming Laptop         </p>
+					<h2>80,200,000 Euro</h2>
+                </div>
+				<div class="box">
+                    <img src="../static/images/asus-tuf-fx506lhb-hn359-15.6-i5-10300h-16gb-512gb-ssd-gtx-1650-4gb-gaming-laptop.jpg">
+                    <h4>Asus TUF FX506LHB-HN359 15.6</h4>
+                    <p>i5-10300H/16GB/512GB SSD/GTX 1650 4GB Gaming Laptop</p>
+					<h2>80,200,000 Euro</h2>
+                </div>
+				<div class="box">
+                    <img src="../static/images/lenovo-legion-5-15ach6-15.6-r5-5600h-16gb-512gb-ssd-rtx-3050-ti-gaming-laptop.jpg">
+                    <h4>Lenovo Legion 5 15ACH6 15.6</h4>
+                    <p>R5-5600H/16GB/512GB SSD/RTX 3050 Ti Gaming Laptop</p>
+					<h2>80,200,000 Euro</h2>
+                </div>
+				<div class="box">
+                    <img src="../static/images/asus-ux8402ze-m3023w-14.5-i9-12900h-32gb-1tb-ssd-rtx-3050-laptop.jpg">
+                    <h4>Asus UX8402ZE-M3023W 14.5</h4>
+                    <p>i9-12900H/32GB/1TB SSD/RTX 3050 Laptop</p>
+					<h2>80,200,000 Euro</h2>
+                </div>
+                {% for laptop in laptops%}
+                				<div class="box">
+                    <img src="../static/images/{{ laptop.image }}">
+                    <h4>{{ laptop.brand }} {{ laptop.model }} {{ laptop.size }}</h4>
+{#                                    <h4>{{ i }}</h4>#}
+                    <p>{{ laptop.cpu }}/{{ laptop.ramSize }}{{ laptop.ramSizeUnit }}/{{ laptop.diskSize }}{{ laptop.diskSizeUnit }} {{ laptop.diskType }}/{{ laptop.graphicModel }} {{ laptop.usageType }}</p>
+					<h2>{{ laptop.price }} Euro</h2>
+                </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </div>
+    <div class="about">
+    <div class="container">
+        <div class="about-header">
+            <h2>برند ها</h2>
+        </div>
+        <div class="about-content">
+            <div class="profile">
+                <img src="../static/images/neon-orange-aesthetic-asus-rog-logo-i9twzuira5f4hi8f.jpg" alt="">
+            </div>
+            <div class="profile">
+                <img src="../static/images/asus-minimalism-background-pybpqco1no31qq9i.jpg" alt="">
+            </div>
+            <div class="profile">
+                <img src="../static/images/ay1fpo3ye3e7expa.jpg" alt="">
+            </div>
+            <div class="profile">
+                <img src="../static/images/black-apple-logo-with-shadow-on-white-ojayz49bxodfpeuf.jpg" alt="">
+            </div> 
+        </div>
+        <div class="about-footer">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab reiciendis enim, accusamus nisi aperiam natus autem magnam iure ex et laborum tenetur necessitatibus, aliquid perspiciatis, commodi alias cumque expedita ullam.
+            </p>
+            <button class="btn btn-blue btn-big">Lorem ipsum dolor sit</button>
+        </div>
+        </div>
+    </div>
+    <div class="contact">
+        <div class="contact-header">
+            <h2>Lorem, ipsum dolor.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="contact-content">
+            <form action="">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+            <textarea placeholder="Message"></textarea>
+            </form>
+            <button class="btn btn-dark btn-big">Send Message</button>
+        </div>
+    </div>
+</div>
+	
+	<div class="footer">
+    <ul class="copyright">
+        <li>© Untitled. All rights reserved.</li>
+        <li>
+            Design:
+            <a href="http://templated.co">TEMPLATED</a>
+        </li>
+        <li>
+            Images:
+            <a href="../static/images/laptop1.jpg">Unsplash</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

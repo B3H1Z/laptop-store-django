@@ -1,0 +1,393 @@
+{% load static %}
+        {% include 'header.html' %}
+
+    <!-- offcanvas overlay start -->        <!-- offcanvas overlay end -->
+    <!-- OffCanvas Wishlist Start -->
+    <div id="offcanvas-wishlist" class="offcanvas offcanvas-wishlist">
+        <div class="offcanvas-overlay"></div>
+        <div class="inner">
+            <div class="head">
+                <span class="title">Wishlist </span>
+                <button class="offcanvas-close">×</button>
+            </div>
+            <div class="body customScroll">
+
+            </div>
+            <div class="foot">
+                <div class="buttons">
+                    <a href="wishlist.html" class="btn btn-dark btn-hover-primary mt-30px">View Wishlist</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- OffCanvas Wishlist End -->
+    <!-- OffCanvas Cart Start -->
+    <div id="offcanvas-cart" class="offcanvas offcanvas-cart">
+        <div class="inner">
+            <div class="head">
+                <span class="title">Cart</span>
+                <button class="offcanvas-close">×</button>
+            </div>
+            <div class="body customScroll">
+
+            </div>
+            <div class="foot">
+                <div class="buttons mt-30px">
+                    <a href="cart.html" class="btn btn-dark btn-hover-primary mb-30px">View Cart</a>
+                    <a href="checkout.html" class="btn btn-outline-dark current-btn">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- OffCanvas Cart End -->
+    <!-- OffCanvas Menu Start -->
+    <div id="offcanvas-mobile-menu" class="offcanvas offcanvas-mobile-menu">
+        <button class="offcanvas-close"></button>
+        <div class="user-panel">
+            <ul>
+                <li><a href="tel:+390694807788"><i class="fa fa-phone"></i> +39 06 9480 7788</a></li>
+                <li><a href="mailto:info@laptopstore.it"><i class="fa fa-envelope-o"></i> info@laptopstore.it</a></li>
+                <li><a href="my-account.html"><i class="fa fa-user"></i> Account</a></li>
+            </ul>
+        </div>
+        <div class="inner customScroll">
+            <div class="offcanvas-menu mb-4">
+                <ul>
+                    <li><a href="#"><span class="menu-text">Home </span></a>
+
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+
+                </ul>
+            </div>
+            <!-- OffCanvas Menu End -->
+            <div class="offcanvas-social mt-auto">
+                <ul>
+                    <li>
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-google"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-youtube"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- OffCanvas Menu End -->
+    <!-- Hero/Intro Slider Start -->
+    <div class="section" >
+        <div class="hero-slider swiper-container slider-nav-style-1 slider-dot-style-1 " style="height: 80vh">
+            <!-- Hero slider Active -->
+            <div class="swiper-wrapper">
+                <!-- Single slider item -->
+                <div class="hero-slide-item slider-height swiper-slide bg-color1"
+                     data-bg-image="{% static 'images/hero/bg/bnr2.jpg' %}">
+                    <div class="container h-100">
+                        <div class="row h-100 w-75">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 align-self-center sm-center-view">
+                                <div class="text-center hero-slide-content slider-animated-1">
+                                    <span class="category">Laptop Store</span>
+                                    <h2 class="title-1">Best Choice <br>
+
+                                    </h2>
+                                    <a href="/products" class="btn btn-primary w-50">Shop Now</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-end">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Single slider item -->
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-white"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-buttons">
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero/Intro Slider End -->
+
+    <!-- Product Area Start -->
+    <div class="product-area pb-100px">
+        <div class="container">
+            <!-- Section Title & Tab Start -->
+
+            <!-- Section Title & Tab End -->
+            <div class="row">
+                <div class="col">
+                    <div class="tab-content mt-60px">
+                        <!-- 1st tab start -->
+                        <div class="tab-pane fade show active" id="newarrivals">
+                            <div class="row mb-n-30px product-card-grid">
+                                {% for laptop in laptops %}
+                                    <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px">
+                                        <!-- Single Prodect -->
+                                        <div class="product">
+                                            <div class="thumb">
+                                                <a href="/product/{{ laptop.id }}" class="image">
+                                                    <img src="{{ laptop.image }}" alt="Product"/>
+                                                    <img class="hover-image" src="{{ laptop.hoverImage }}"
+                                                         alt="Product"/>
+                                                </a>
+                                            </div>
+                                            <div class="content text-center" style="">
+                                                <span class="category"><a
+                                                        href="#">{{ laptop.brand }} {{ laptop.model }} {{ laptop.size }}</a></span>
+                                                <h5 class="title"><a
+                                                        href="/product/{{ laptop.id }}">{{ laptop.cpuGen }}-{{ laptop.cpuModel }}/{{ laptop.ramSize }}{{ laptop.ramSizeUnit }}/{{ laptop.diskSize }}{{ laptop.diskSizeUnit }} {{ laptop.diskType }}/{{ laptop.graphicSeries }} {{ laptop.graphicModel }}/{{ laptop.usageType }}
+                                                </a>
+                                                </h5>
+                                                <span class="price">
+                                                    <span class="new">{{ laptop.price }} Euro</span>
+                                                </span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                        <!-- 1st tab end -->
+                        <!-- 2nd tab start -->
+                        <div class="tab-pane fade" id="toprated">
+                            <div class="row">
+                                <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px">
+                                    <!-- Single Prodect -->
+                                    <div class="product">
+                                            <span class="badges">
+                                                <span class="new">New </span>
+                                            </span>
+                                        <div class="thumb">
+                                            <a href="single-product-9.html" class="image">
+                                                <img src="{% static 'images/product-image/1.webp' %}" alt="Product"/>
+                                                <img class="hover-image"
+                                                     src="{% static 'images/product-image/1.webp' %}" alt="Product"/>
+                                            </a>
+                                        </div>
+                                        <div class="content">
+                                            <span class="category"><a href="#">Laptop</a></span>
+                                            <h5 class="title"><a href="single-product-9.html">idea pad 3
+                                            </a>
+                                            </h5>
+                                            <span class="price">
+                                                    <span class="new">12.000.000</span>
+                                                </span>
+                                        </div>
+                                        <div class="actions" dir="ltr">
+                                            <button title="Add to Cart" class="action add-to-cart"
+                                                    data-bs-toggle="modal" data-bs-target="#exampleModal-Cart"><i
+                                                    class="pe-7s-shopbag"></i></button>
+                                            <button class="action wishlist" title="Wishlist" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal-Wishlist"><i
+                                                    class="pe-7s-like"></i></button>
+                                            <button class="action quickview" data-link-action="quickview"
+                                                    title="View Product " data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal"><i class="pe-7s-look"></i></button>
+                                            <button class="action compare" title="Compare " data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModal-Compare"><i
+                                                    class="pe-7s-refresh-2"></i></button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 2nd tab end -->
+                            <!-- 3rd tab start -->
+                            <div class="tab-pane fade" id="featured">
+                                <div class="row">
+                                    <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px">
+                                        <!-- Single Prodect -->
+                                        <div class="product">
+                                            <span class="badges">
+                                                <span class="new">New </span>
+                                            </span>
+                                            <div class="thumb">
+                                                <a href="single-product-10.html" class="image">
+                                                    <img src="{% static 'images/product-image/1.webp' %}"
+                                                         alt="Product"/>
+                                                    <img class="hover-image"
+                                                         src="{% static 'images/product-image/1.webp' %}"
+                                                         alt="Product"/>
+                                                </a>
+                                            </div>
+                                            <div class="content">
+                                                <span class="category"><a href="#">Laptop</a></span>
+                                                <h5 class="title"><a href="single-product-10.html">idea pad 3
+                                                </a>
+                                                </h5>
+                                                <span class="price">
+                                                    <span class="new">12.000.000</span>
+                                                </span>
+                                            </div>
+                                            <div class="actions" dir="ltr">
+                                                <button title="Add to Cart" class="action add-to-cart"
+                                                        data-bs-toggle="modal" data-bs-target="#exampleModal-Cart"><i
+                                                        class="pe-7s-shopbag"></i></button>
+                                                <button class="action wishlist" title="Wishlist"
+                                                        data-bs-toggle="modal" data-bs-target="#exampleModal-Wishlist">
+                                                    <i
+                                                            class="pe-7s-like"></i></button>
+                                                <button class="action quickview" data-link-action="quickview"
+                                                        title="View Product " data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal"><i class="pe-7s-look"></i>
+                                                </button>
+                                                <button class="action compare" title="Compare " data-bs-toggle="modal"
+                                                        data-bs-target="#exampleModal-Compare"><i
+                                                        class="pe-7s-refresh-2"></i></button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 3rd tab end -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product Area End -->
+
+            <!-- Feature product area start -->
+
+            <!-- Feature product area End -->
+            <!-- Banner Area Start -->
+            <div class="banner-area style-one pt-100px pb-100px">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="single-banner nth-child-1 ">
+                                <img src="{% static 'images/banner/aorus-laptop-review.jpg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="single-banner nth-child-2 mb-30px mb-lm-30px mt-lm-30px ">
+                                <img src="{% static 'images/banner/obzor-msi-gl65-leopard.png' %}" alt="">
+                            </div>
+                            <div class="single-banner nth-child-2">
+                                <img src="{% static 'images/banner/peakpx.jpg' %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Banner Area End -->
+            <!-- Testimonial area start -->
+            <div class="pt-100px pb-100px">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="section-title text-center m-0">
+                                <h2 class="title">Customer Feedback </h2>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Swiper -->
+                            <div class="swiper-container content-top slider-nav-style-1">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="testi-inner">
+                                            <div class="testi-content">
+                                                <p>Great quality and fast delivery. I had a smooth shopping experience.
+                                                </p>
+                                            </div>
+                                            <div class="testi-author">
+
+                                                <div class="author-name">
+                                                    <h4 class="name">Amir Okhchi<span>Customer </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testi-inner">
+                                            <div class="testi-content">
+                                                <p>Excellent value for the price and very reliable performance.
+                                                </p>
+                                            </div>
+                                            <div class="testi-author">
+                                                <div class="author-name">
+                                                    <h4 class="name">Amirhossein Safarzadeh<span>Customer </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="testi-inner">
+                                            <div class="testi-content">
+                                                <p>Customer support was helpful and the product matched expectations.
+                                                </p>
+                                            </div>
+                                            <div class="testi-author">
+                                                <div class="author-name">
+                                                    <h4 class="name">Behnam Ahmadi <span>Customer </span></h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-buttons">
+                                    <div class="swiper-button-next"></div>
+                                    <div class="swiper-button-prev"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Testimonial area end-->
+            <!-- Brand area start -->
+            <div class="brand-area pt-100px pb-100px">
+                <div class="container">
+                    <div class="brand-slider swiper-container">
+                        <div class="swiper-wrapper align-items-center">
+                            <div class="swiper-slide brand-slider-item text-center">
+                                <a href="#"><img class=" img-fluid" src="{% static 'images/logo/acer.png' %}"
+                                                 alt=""/></a>
+                            </div>
+                            <div class="swiper-slide brand-slider-item text-center">
+                                <a href="#"><img class=" img-fluid" src="{% static 'images/logo/dell.png' %}"
+                                                 alt=""/></a>
+                            </div>
+                            <div class="swiper-slide brand-slider-item text-center">
+                                <a href="#"><img class=" img-fluid" src="{% static 'images/logo/msi.png' %}"
+                                                 alt=""/></a>
+                            </div>
+                            <div class="swiper-slide brand-slider-item text-center">
+                                <a href="#">
+                                    <img class=" img-fluid" src="{% static 'images/logo/rog.png' %}" alt=""
+                                         height="120px" width="200px"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Brand area end -->
+            <!-- Blog area start from here -->
+
+            <!-- Blog area end here -->
+            <!-- Footer Area Start -->
+
+            <!-- Footer Area End -->
+        </div>
+</div>
+{% include 'footer.html' %}
