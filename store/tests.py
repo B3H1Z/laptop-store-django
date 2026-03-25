@@ -9,14 +9,14 @@ class StoreViewTests(TestCase):
         """Set up test client."""
         self.client = Client()
 
-    def test_index_page_loads(self):
-        """Test that index page returns 200 status."""
-        response = self.client.get(reverse('index'))
+    def test_home_page_loads(self):
+        """Test that home page returns 200 status."""
+        response = self.client.get(reverse('home'))
         self.assertEqual(response.status_code, 200)
 
-    def test_shop_page_loads(self):
-        """Test that shop page returns 200 status."""
-        response = self.client.get(reverse('shop'))
+    def test_products_page_loads(self):
+        """Test that products page returns 200 status."""
+        response = self.client.get(reverse('products'))
         self.assertEqual(response.status_code, 200)
 
     def test_about_page_loads(self):
@@ -24,8 +24,8 @@ class StoreViewTests(TestCase):
         response = self.client.get(reverse('about'))
         self.assertEqual(response.status_code, 200)
 
-    def test_contact_page_loads(self):
-        """Test that contact page returns 200 status."""
-        response = self.client.get(reverse('contact'))
-        self.assertEqual(response.status_code, 200)
+    def test_user_redirect_route_loads(self):
+        """Test that user redirect route responds."""
+        response = self.client.get(reverse('user'))
+        self.assertEqual(response.status_code, 302)
 

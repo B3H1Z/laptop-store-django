@@ -73,7 +73,7 @@ A modern e-commerce web application for buying and selling laptops, built with D
 
 ```
 laptop-store-django/
-├── djangoProject/          # Main Django project settings
+├── config/          # Main Django project settings
 │   ├── settings.py         # Project configuration and environment variables
 │   ├── urls.py             # URL routing
 │   ├── views.py            # Shared views
@@ -174,7 +174,7 @@ For production deployment:
 6. Set up static file serving (WhiteNoise or CDN)
 7. Enable HTTPS
 
-See `djangoProject/wsgi.py` for WSGI configuration.
+See `config/wsgi.py` for WSGI configuration.
 
 ## Troubleshooting
 
